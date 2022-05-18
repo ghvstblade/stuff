@@ -129,5 +129,5 @@ end)
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/boxhealth', true))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/skeleton', true))()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/silent2', true))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/silentv2', true))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/sumf', true))()
