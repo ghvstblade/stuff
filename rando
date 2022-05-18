@@ -1,0 +1,140 @@
+local Config = {
+    WindowName = "03x07Hook.cc | bloody#0003",
+	Color = Color3.fromRGB(36, 0, 128),
+	Keybind = Enum.KeyCode.RightAlt
+}
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/AlexR32/Roblox/main/BracketV3.lua"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+
+local Tab1 = Window:CreateTab("AimBot")
+local Tab2 = Window:CreateTab("Visuals")
+local Tab3 = Window:CreateTab("Rage (WIP)")
+local Tab4 = Window:CreateTab("UI Settings")
+
+-- Silent Aim Section
+local Section1 = Tab1:CreateSection("AimBot")
+local Section2 = Tab1:CreateSection("FoV Settings")
+
+-- Visual Sections
+
+local Section3 = Tab2:CreateSection("ESP")
+local Section4 = Tab2:CreateSection("Gun Skins")
+
+-- Rage Sections
+
+local Section5 = Tab3:CreateSection("Rage Configs")
+local Section6 = Tab3:CreateSection("Rage Visuals")
+
+-- UI Sections
+local Section7 = Tab4:CreateSection("Menu")
+local Section8 = Tab4:CreateSection("Background")
+
+
+
+-- UI Script
+
+local UITog = Section7:CreateToggle("UI Toggle", nil, function(State)
+	Window:Toggle(State)
+end)
+UITog:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), function(Key)
+	Config.Keybind = Enum.KeyCode[Key]
+end)
+UITog:SetState(true)
+
+local UIColor = Section7:CreateColorpicker("UI Color", function(Color)
+	Window:ChangeColor(Color)
+end)
+UIColor:UpdateColor(Config.Color)
+
+local UIDes = Section8:CreateDropdown("Image", {"Default","Hearts","Abstract","Hexagon","Circles","Lace With Flowers","Floral"}, function(Name)
+	if Name == "Default" then
+		Window:SetBackground("2151741365")
+	elseif Name == "Hearts" then
+		Window:SetBackground("6073763717")
+	elseif Name == "Abstract" then
+		Window:SetBackground("6073743871")
+	elseif Name == "Hexagon" then
+		Window:SetBackground("6073628839")
+	elseif Name == "Circles" then
+		Window:SetBackground("6071579801")
+	elseif Name == "Lace With Flowers" then
+		Window:SetBackground("6071575925")
+	elseif Name == "Floral" then
+		Window:SetBackground("5553946656")
+	end
+end)
+UIDes:SetOption("Default")
+
+local UICol2 = Section8:CreateColorpicker("Color", function(Color)
+	Window:SetBackgroundColor(Color)
+end)
+UICol2:UpdateColor(Color3.new(1,1,1))
+
+local Slider3 = Section8:CreateSlider("Transparency",0,1,nil,false, function(Value)
+	Window:SetBackgroundTransparency(Value)
+end)
+Slider3:SetValue(0)
+
+local Slider4 = Section8:CreateSlider("Tile Scale",0,1,nil,false, function(Value)
+	Window:SetTileScale(Value)
+end)
+Slider4:SetValue(0.5)
+
+-- Rage
+
+-- Rage Vision
+
+local RVSG = Instance.new("ScreenGui")
+local RVS = Instance.new("Frame")
+
+RVSG.Parent = game.CoreGui
+RVSG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+RVS.Parent = RVSG
+RVS.BackgroundColor3 = Color3.fromRGB(36, 0, 128)
+RVS.BackgroundTransparency = 0.5
+RVS.Size = UDim2.new(0, 2000, 0, 1000)
+RVS.Visible = false
+
+
+local RVGTog = Section6:CreateToggle("Rage Vision", nil, function(State)
+	RVS.Visible = State
+end)
+
+local NCTog = Section5:CreateToggle("Noclip", nil, function(State)
+    print(state)
+end)
+
+local UIS4 = game:GetService'UserInputService';
+UIS4.InputBegan:connect(function(UserInput)
+        if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.LeftShift then
+            _G.Running = true
+                while wait(0.005) and _G.Running == true do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0.5
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0.5
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0.5
+end
+        end
+end)
+UIS4.InputEnded:connect(function(UserInput)
+        if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.LeftShift then
+                _G.Running = false
+        end
+end)
+
+local SDTog = Section5:CreateToggle("Speed", nil, function(State)
+	_G.Running = State
+end)
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/boxhealth', true))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/skeleton', true))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/silent2', true))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/sumf', true))()
+
+game:GetService('RunService').Stepped:connect(function()
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+end)
