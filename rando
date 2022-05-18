@@ -131,10 +131,3 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/skeleton', true))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/silent2', true))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/sumf', true))()
-
-game:GetService('RunService').Stepped:connect(function()
-game.Players.LocalPlayer.Character.Head.CanCollide = false
-game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
-game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
-game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
-end)
