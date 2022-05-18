@@ -1,0 +1,49 @@
+-- [[ Red Kit By Blade ]] --
+
+local sky = game.Lighting.Sky
+
+sky.SkyboxBk = "rbxassetid://401664839"
+sky.SkyboxDn = "rbxassetid://401664862"
+sky.SkyboxFt = "rbxassetid://401664960"
+sky.SkyboxLf = "rbxassetid://401664881"
+sky.SkyboxRt = "rbxassetid://401664901"
+sky.SkyboxUp = "rbxassetid://401664936"
+
+local ssg08 = game.ReplicatedStorage.GunSystem.GunClientAssets.Viewmodels.SSG08
+
+ssg08.Body.TextureID = "rbxassetid://9652126862"
+ssg08.Scope.Mesh.TextureId = "rbxassetid://9652126862"
+ssg08.Bipod.Mesh.TextureId = "rbxassetid://9652126862"
+
+local knife1 = game.ReplicatedStorage.GunSystem.GunClientAssets.Viewmodels.DoubleKnife
+
+knife1.LeftKnife.TextureID = "rbxassetid://9652309087"
+knife1.RightKnife.TextureID = "rbxassetid://9652309087"
+
+local knife2 = game.ReplicatedStorage.GunSystem.GunClientAssets.Viewmodels.GoldenFlower
+
+knife2.LeftHandle.TextureID = "rbxassetid://9652353588"
+knife2.RightHandle.TextureID = "rbxassetid://9652353588"
+knife2.Blade.TextureID = "rbxassetid://9652353588"
+
+local g3 = game.ReplicatedStorage.GunSystem.GunClientAssets.Viewmodels.G3SG1
+
+g3.Body.TextureID = "rbxassetid://9652393985"
+g3.Bolt.TextureID = "rbxassetid://9652393985"
+g3.Mag.TextureID = "rbxassetid://9652393985"
+g3.Scope.TextureID = "rbxassetid://9652393985"
+
+local g2 = game.ReplicatedStorage.GunSystem.GunClientAssets.Viewmodels.R2MI.Gun
+
+g2.Bolt.TextureID = "rbxassetid://9652470499"
+g2.GunBody.TextureID = "rbxassetid://9652470499"
+g2.Magazine.TextureID = "rbxassetid://9652470499"
+
+local awp = game.ReplicatedStorage.GunSystem.GunClientAssets.Viewmodels.AWP
+
+awp.Bipod.TextureID = "rbxassetid://9652248988"
+awp.Body.TextureID = "rbxassetid://9652248988"
+awp.PartScope.TextureID = "rbxassetid://9652248988"
+awp.Bolt.Mesh.TextureId = "rbxassetid://9652248988"
+awp.Bolt2.Mesh.TextureId = "rbxassetid://9652248988"
+awp.Mag.TextureID = "rbxassetid://9652248988"
