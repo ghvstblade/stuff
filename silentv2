@@ -16,9 +16,9 @@ local SilentAimSettings = {
     TargetPart = "HumanoidRootPart",
     SilentAimMethod = "Raycast",
     
-    FOVRadius = 130,
-    FOVVisible = false,
-    ShowSilentAimTarget = false, 
+    FOVRadius = 550,
+    FOVVisible = true,
+    ShowSilentAimTarget = true, 
     
     MouseHitPrediction = false,
     MouseHitPredictionAmount = 0.165,
@@ -65,12 +65,12 @@ mouse_box.Filled = true
 local fov_circle = Drawing.new("Circle")
 fov_circle.Thickness = 1
 fov_circle.NumSides = 100
-fov_circle.Radius = 180
+fov_circle.Radius = 550
 fov_circle.Filled = false
 fov_circle.Visible = false
 fov_circle.ZIndex = 999
 fov_circle.Transparency = 1
-fov_circle.Color = Color3.fromRGB(54, 57, 241)
+fov_circle.Color = Color3.fromRGB(0, 0, 0)
 
 local ExpectedArguments = {
     FindPartOnRayWithIgnoreList = {
@@ -266,7 +266,7 @@ local FieldOfViewBOX = GeneralTab:AddLeftTabbox("Field Of View") do
         fov_circle.Visible = Toggles.Visible.Value
         SilentAimSettings.FOVVisible = Toggles.Visible.Value
     end)
-    Main:AddSlider("Radius", {Text = "FOV Circle Radius", Min = 0, Max = 360, Default = 130, Rounding = 0}):OnChanged(function()
+    Main:AddSlider("Radius", {Text = "FOV Circle Radius", Min = 0, Max = 600, Default = 550, Rounding = 0}):OnChanged(function()
         fov_circle.Radius = Options.Radius.Value
         SilentAimSettings.FOVRadius = Options.Radius.Value
     end)
