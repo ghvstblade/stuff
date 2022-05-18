@@ -101,12 +101,10 @@ RVS.Visible = false
 local RVGTog = Section6:CreateToggle("Rage Vision", nil, function(State)
 	RVS.Visible = State
 end)
-RVS:SetState(true)
 
 local NCTog = Section5:CreateToggle("Noclip", nil, function(State)
     print(state)
 end)
-NCTog:SetState(true)
 
 local UIS4 = game:GetService'UserInputService';
 UIS4.InputBegan:connect(function(UserInput)
@@ -128,7 +126,6 @@ end)
 local SDTog = Section5:CreateToggle("Speed", nil, function(State)
 	_G.Running = State
 end)
-SDTog:SetState(true)
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/boxhealth', true))()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ghvstblade/stuff/main/skeleton', true))()
