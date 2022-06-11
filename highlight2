@@ -64,10 +64,10 @@ function esp(target, color)
                 highlight.Name = target.Name
                 highlight.Adornee = target.Character
                 highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-                highlight.FillColor = color
+                highlight.FillColor = Color3.fromRGB(17, 0, 255)
                 highlights[target] = highlight
             else
-                highlights[target].FillColor = color
+                highlights[target].FillColor = Color3.fromRGB(17, 0, 255)
             end
         end
     end)
@@ -88,9 +88,22 @@ end)
 
 for i, v in pairs(players:GetPlayers()) do
     if v ~= plr then
-        local color = Color3.fromRGB(255, 0, 0)
+        local color = Color3.fromRGB(17, 0, 255)
         v.CharacterAdded:Connect(function()
-            local color = Color3.fromRGB(255, 0, 0)
+            local color = Color3.fromRGB(17, 0, 255)
+            esp(v, color)
+        end)
+        
+        esp(v, color)
+    end
+end
+
+while task.wait() do
+    for i, v in pairs(highlights) do
+        local color = Color3.fromRGB(17, 0, 255)
+        v.FillColor = Color3.fromRGB(17, 0, 255)
+    end
+end
             esp(v, color)
         end)
         
@@ -101,19 +114,6 @@ end
 while task.wait() do
     for i, v in pairs(highlights) do
         local color = _G.UseTeamColor and i.TeamColor.Color or ((plr.TeamColor == i.TeamColor) and _G.FriendColor or _G.EnemyColor)
-        v.FillColor = Color3.fromRGB(255, 0, 0)
-    end
-end
-            esp(v, color)
-        end)
-        
-        esp(v, color)
-    end
-end
-
-while task.wait() do
-    for i, v in pairs(highlights) do
-        local color = _G.UseTeamColor and i.TeamColor.Color or ((plr.TeamColor == i.TeamColor) and _G.FriendColor or _G.EnemyColor)
-        v.FillColor = color
+        v.FillColor = Color3.fromRGB(17, 0, 255)
     end
 end
