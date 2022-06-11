@@ -27,9 +27,9 @@ while getgenv().enabled do
             else
         esp.Parent = holder
         if filluseteamcolor then
-            esp.FillColor = Color3.new(17, 0, 255)
+            esp.FillColor = Color3.new(0, 0, 255)
         else
-            esp.FillColor = Color3.new(17, 0, 255)
+            esp.FillColor = Color3.new(0, 0, 255)
         end
         if outlineuseteamcolor then
             esp.OutlineColor = v.TeamColor.Color
