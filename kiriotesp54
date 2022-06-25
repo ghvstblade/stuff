@@ -227,12 +227,12 @@ function boxBase:Update()
             self.Components.Name.Visible = true
             self.Components.Name.Position = Vector2.new(TagPos.X, TagPos.Y)
             self.Components.Name.Text = self.Name
-            self.Components.Name.Color = color
+            self.Components.Name.Color = ESP.TextColor
             
             self.Components.Distance.Visible = true
             self.Components.Distance.Position = Vector2.new(TagPos.X, TagPos.Y + 14)
             self.Components.Distance.Text = math.floor((cam.CFrame.p - cf.p).magnitude) .."m away"
-            self.Components.Distance.Color = color
+            self.Components.Distance.Color = ESP.TextColor
         else
             self.Components.Name.Visible = false
             self.Components.Distance.Visible = false
@@ -292,14 +292,14 @@ function ESP:Add(obj, options)
     })
     box.Components["Name"] = Draw("Text", {
 		Text = box.Name,
-		Color = box.Color,
+		Color = ESP.TextColor,
 		Center = true,
 		Outline = true,
         Size = 19,
         Visible = self.Enabled and self.Names
 	})
 	box.Components["Distance"] = Draw("Text", {
-		Color = box.Color,
+		Color = ESP.TextColor,
 		Center = true,
 		Outline = true,
         Size = 19,
