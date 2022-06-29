@@ -1,3 +1,7 @@
+if game.ReplicatedStorage:FindFirstChild("fireme") then
+    game.ReplicatedStorage.fireme:Destroy()
+end
+
 local mt = getrawmetatable(game)
     local old = mt.__namecall
     local protect = newcclosure or protect_function
