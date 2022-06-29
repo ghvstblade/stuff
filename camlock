@@ -13,7 +13,7 @@ local Mouse = LP:GetMouse()
 local Camera = WS.CurrentCamera
 local GetGuiInset = GS.GetGuiInset
 
-local AimlockState = true
+local AimlockState = getgenv().Enabled
 local Locked
 local Victim
 
@@ -33,7 +33,7 @@ end
 --// Check if aimlock is loaded
 
 if getgenv().Loaded == true then
-    Notify("Aimlock is already loaded!")
+    print("loaded")
     return
 end
 
@@ -61,6 +61,7 @@ function update()
         end
     end
 end
+
 
 function WTVP(arg)
     return Camera:WorldToViewportPoint(arg)
