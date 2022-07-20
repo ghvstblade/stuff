@@ -4316,8 +4316,8 @@ CMDs[#CMDs + 1] = {NAME = 'goto [plr]', DESC = 'Go to a player'}
 CMDs[#CMDs + 1] = {NAME = 'tweengoto / tgoto [plr]', DESC = 'Tween to a player (bypasses some anti cheats)'}
 CMDs[#CMDs + 1] = {NAME = 'tweenspeed / tspeed [num]', DESC = 'Sets how fast all tween commands go (default is 1)'}
 CMDs[#CMDs + 1] = {NAME = 'vehiclegoto / vgoto [plr]', DESC = 'Go to a player while in a vehicle'}
-CMDs[#CMDs + 1] = {NAME = 'loopgoto [plr] [distance] [delay]', DESC = 'Loop teleport to a player'}
-CMDs[#CMDs + 1] = {NAME = 'unloopgoto', DESC = 'Stops teleporting you to a player'}
+CMDs[#CMDs + 1] = {NAME = 'triggerbot [plr] [distance] [delay]', DESC = 'Loop teleport to a player'}
+CMDs[#CMDs + 1] = {NAME = 'untriggerbot', DESC = 'Stops teleporting you to a player'}
 CMDs[#CMDs + 1] = {NAME = 'pulsetp / ptp [plr] [seconds]', DESC = 'Teleports you to a player for a specified ammount of time'}
 CMDs[#CMDs + 1] = {NAME = 'clientbring / cbring [plr] (CLIENT)', DESC = 'Bring a player'}
 CMDs[#CMDs + 1] = {NAME = 'loopbring [plr] [distance] [delay] (CLIENT)', DESC = 'Loop brings a player to you (useful for killing)'}
@@ -9902,7 +9902,7 @@ addcmd('audiologger',{'alogger'},function(args, speaker)
 end)
 
 local loopgoto = nil
-addcmd('loopgoto',{},function(args, speaker)
+addcmd('triggerbot',{},function(args, speaker)
 	local players = getPlayer(args[1], speaker)
 	for i,v in pairs(players)do
 		loopgoto = nil
@@ -9932,7 +9932,7 @@ addcmd('loopgoto',{},function(args, speaker)
 	end
 end)
 
-addcmd('unloopgoto',{'noloopgoto'},function(args, speaker)
+addcmd('untriggerbot',{'noloopgoto'},function(args, speaker)
 	loopgoto = nil
 end)
 
